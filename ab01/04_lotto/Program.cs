@@ -13,19 +13,25 @@
             tips[i] = ReadTip(i);
         }
         
+        Console.WriteLine("Es wurden folgende Zahlen gezogen:");
         Random rng = new Random();
         for(int i = 0; i < amountOfTips; i++)
         {
             results[i] = rng.Next(1, 45);
+            Console.Write(results[i] + " ");
         }
+        Console.Write("\n");
 
+        int hits = 0;
         for(int i = 0; i < tips.Count(); i++)
         {
             if(tips[i] == results[i])
             {
-                Console.WriteLine("asdf");
+                Console.WriteLine("Treffer: " + tips[i]);
+                hits++;
             }
         }
+        Console.WriteLine("Sie haben " + hits + " Treffer erzielt.");
     }
     
     private static int ReadTip(int index)
