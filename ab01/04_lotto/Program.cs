@@ -8,14 +8,15 @@
 
 
         Console.WriteLine("Bitte geben Sie ihre Tipps ab (1-45)");
-        for(int i = 1; i <= amountOfTips; i++)
+        for(int i = 0; i < amountOfTips; i++)
         {
             tips[i] = ReadTip(i);
         }
         
-        for(int i = 1; i <= amountOfTips; i++)
+        Random rng = new Random();
+        for(int i = 0; i < amountOfTips; i++)
         {
-            results[i] = Random.Next(1, 45);
+            results[i] = rng.Next(1, 45);
         }
 
         for(int i = 0; i < tips.Count(); i++)
@@ -29,7 +30,7 @@
     
     private static int ReadTip(int index)
     {
-        Console.Write("Tipp " + index + ": ");
+        Console.Write("Tipp " + (index + 1) + ": ");
         int tip;
         string input = Console.ReadLine();
         if (int.TryParse(input, out tip))
