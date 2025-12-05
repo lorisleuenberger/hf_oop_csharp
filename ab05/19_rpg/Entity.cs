@@ -11,5 +11,12 @@ namespace rpg
             Hp = hp;
             Atk = atk;
         }
+        
+        public abstract void takeDamage()
+        {
+            
+        }
+        
+        public int
     }
 }
