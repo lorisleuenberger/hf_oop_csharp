@@ -1,0 +1,1 @@
+internal enum GeraetKategorie { Computer, Messgeraet, Werkzeug }

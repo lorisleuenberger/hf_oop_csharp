@@ -1,0 +1,1 @@
+internal enum Zustand { Neu, Gut, Defekt, Ausgemustert }
