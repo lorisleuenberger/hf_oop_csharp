@@ -29,8 +29,19 @@ internal class Program
         };
         Game game = new Game
         {
+            GameID = "FantasyRPG",
             Players = new List<Player> {player1, player2},
             Levels = new List<Level> {level1, level2}
         };
+        
+        string jsonString = JsonSerializer.Serialize(game);
+        File.WriteAllText("game.json", jsonString);
+        Console.WriteLine("Following json saved to game.json:");
+        Console.WriteLine(jsonString);
+        
+
+        string json = File.ReadAllText("game.json");
+        Game gameCopy = JsonSerializer.Deserialize<Game>(json);
+        Console.WriteLine($"\n\nSuccessfully imported Game with GameID: {gameCopy.GameID}");
     }
 }
