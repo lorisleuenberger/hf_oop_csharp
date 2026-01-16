@@ -1,11 +1,9 @@
-﻿using System.Diagnostics;
-
-internal class Program
+﻿internal class Program
 {
     private static void Main(string[] args)
     {
-        Player player1 = new Player { Name = "John", Health = 250, Attack = (decimal)20.0};
-        Player player2 = new Player { Name = "Jane", Health = 140, Attack = (decimal)35.0};
+        Player player1 = new Player("John", 250, (decimal)20.0, 0);
+        Player player2 = new Player("Jane", 140, (decimal)35.0, 0);
 
         Enemy orc = new Enemy { Type = "Orc", Health = 40, Attack = (decimal)10.0};
         Enemy griffin = new Enemy { Type = "Griffin", Health = 200, Attack = (decimal)15.0};
